@@ -12,7 +12,7 @@ const ICONS = {
         bell: "https://cdn-icons-png.flaticon.com/512/3602/3602145.png",
         user: "https://cdn-icons-png.flaticon.com/512/1077/1077114.png",
         back: "https://cdn-icons-png.flaticon.com/512/271/271220.png",
-        logo: "images/logo.svg" // Chair icon
+        logo: "images/logo.png" // Chair icon
     },
     actions: {
         starOn: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", // Yellow Star
