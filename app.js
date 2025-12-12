@@ -318,9 +318,10 @@ const App = () => {
                     </div>
                     <div className="search-container">
                         <img src={ICONS.header.menu} className="search-icon-left icon-img" onClick={() => setShowFilter(!showFilter)} />
-                        <input type="text" className="search-input-fancy" defaultValue="제1공학관" />
+                        <input type="text" className="search-input-fancy" placeholder="검색 내용" onClick={() => setActiveTab('search')} />
                         <img src={ICONS.header.search} className="search-icon-right icon-img" />
                     </div>
+                    
                 </div>
                 <div className="content">
                     {showFilter ? (
@@ -370,9 +371,11 @@ const App = () => {
                         </div>
                     </div>
                     <div className="search-container">
+                    <div className="search-container">
                         <img src={ICONS.header.menu} className="search-icon-left icon-img" onClick={() => setShowFilter(!showFilter)} />
-                        <input type="text" className="search-input-fancy" defaultValue="제1공학관" />
+                        <input type="text" className="search-input-fancy" placeholder="검색 내용" onClick={() => setActiveTab('search')} />
                         <img src={ICONS.header.search} className="search-icon-right icon-img" />
+                    </div>
                     </div>
                 </div>
                 <div className="content">
@@ -411,7 +414,7 @@ const App = () => {
                     </div>
                     <div className="search-container">
                         <img src={ICONS.header.menu} className="search-icon-left icon-img" onClick={() => setShowFilter(!showFilter)} />
-                        <input type="text" className="search-input-fancy" defaultValue="제1공학관" />
+                        <input type="text" className="search-input-fancy" placeholder="검색 내용" onClick={() => setActiveTab('search')} />
                         <img src={ICONS.header.search} className="search-icon-right icon-img" />
                     </div>
                 </div>
@@ -452,7 +455,7 @@ const App = () => {
                         </div>
                     </div>
                     <div className="search-container">
-                        <img src={ICONS.header.menu} className="search-icon-left icon-img" onClick={() => setActiveTab('search')} />
+                        <img src={ICONS.header.menu} className="search-icon-left icon-img" onClick={() => setShowFilter(!showFilter)} />
                         <input type="text" className="search-input-fancy" placeholder="검색 내용" onClick={() => setActiveTab('search')} />
                         <img src={ICONS.header.search} className="search-icon-right icon-img" />
                     </div>
