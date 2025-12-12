@@ -488,17 +488,31 @@
   .logo-text { color: var(--primary); font-size: 24px; font-weight: bold; margin-top: 20px;}
   /* Add this to the very bottom of your style.css */
 
+/* --- MOBILE FULL SCREEN FIX --- */
 @media only screen and (max-width: 600px) {
+    
+    /* 1. Reset the body so it doesn't try to center a small box */
     body {
-        background-color: white; /* Remove gray background */
-        align-items: flex-start; /* Align to top */
+        background-color: white;
+        display: block; /* Stop centering */
+        height: 100%;
+        width: 100%;
+        overflow: auto; /* Allow scrolling if needed */
     }
 
+    /* 2. Force the app container to fill the screen */
     .app-container {
-        width: 100vw;   /* Fill 100% of viewport width */
-        height: 100vh;  /* Fill 100% of viewport height */
-        border: none;   /* Remove the fake phone border */
-        border-radius: 0; /* Remove rounded corners */
-        box-shadow: none; /* Remove shadow */
+        width: 100% !important;  /* Force full width */
+        height: 100vh !important; /* Force full height */
+        
+        /* Remove the "fake phone" look */
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        
+        /* 3. Handle the iPhone Notch (Safe Areas) */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
     }
 }
