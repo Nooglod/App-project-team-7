@@ -486,3 +486,19 @@
   .splash-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #2c5bb8; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 200; }
   /* CHANGED: Logo text to primary blue */
   .logo-text { color: var(--primary); font-size: 24px; font-weight: bold; margin-top: 20px;}
+  /* Add this to the very bottom of your style.css */
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: white; /* Remove gray background */
+        align-items: flex-start; /* Align to top */
+    }
+
+    .app-container {
+        width: 100vw;   /* Fill 100% of viewport width */
+        height: 100vh;  /* Fill 100% of viewport height */
+        border: none;   /* Remove the fake phone border */
+        border-radius: 0; /* Remove rounded corners */
+        box-shadow: none; /* Remove shadow */
+    }
+}
