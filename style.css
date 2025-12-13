@@ -15,14 +15,14 @@
     --light-blue-bg: #eef6fc;
     --light-mint-bg: #e3f2fd; /* Now a very light blue instead of mint */
   }
-  
+
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   body {
     background-color: #d0d0d0;
     display: flex;
@@ -32,7 +32,7 @@
     margin: 0;
     overflow: hidden;
   }
-  
+
   .app-container {
     width: 375px;
     height: 812px;
@@ -65,7 +65,7 @@
   /* CHANGED: Logo color to match primary blue */
   .brand-logo { font-size: 15px; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 0px; }
   .header-icons { display: flex; gap: 15px; font-size: 24px; color: #333; }
-  
+
   .search-container { position: relative; width: 100%; }
   .search-input-fancy {
     width: 100%;
@@ -89,7 +89,7 @@
   }
   .search-icon-left { left: 10px; font-size: 20px; }
   .search-icon-right { right: 10px; }
-  
+
   /* --- CONTENT AREA --- */
   .content {
     flex: 1;
@@ -99,7 +99,7 @@
     position: relative; 
   }
   .content::-webkit-scrollbar { display: none; }
-  
+
   /* --- FILTER OVERLAY STYLES --- */
   .filter-overlay {
       position: absolute;
@@ -108,64 +108,64 @@
       z-index: 50; 
       padding: 15px;
   }
-  
+
   .filter-box {
       background: white;
       /* CHANGED: Border color to primary blue */
       border: 1px solid var(--primary);
       border-radius: 15px;
       padding: 20px;
-    
+
       display: flex;
       flex-direction: column;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
-  
+
   .filter-title-main {
       text-align: center;
       font-weight: bold;
       font-size: 18px;
       margin-bottom: 25px;
   }
-  
+
   .filter-category-title {
       font-weight: bold;
       font-size: 15px;
       margin-bottom: 10px;
       color: #333;
   }
-  
+
   .filter-tags-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-bottom: 30px;
   }
-  
+
   .filter-chip-btn {
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 12px;
       border: 1px solid #ddd;
-      background: #e0e0e0; 
+      background: #124170; 
       color: #555;
       cursor: pointer;
       transition: 0.2s;
   }
-  
+
   /* CHANGED: Active chip color from Green to Primary Blue */
   .filter-chip-btn.active {
       background: var(--primary);
       color: white;
       border-color: var(--primary);
   }
-  
+
   .filter-actions-row {
       margin-top: auto;
       display: flex;
       gap: 15px;
   }
-  
+
   .btn-filter-reset, .btn-filter-apply {
       flex: 1;
       padding: 12px;
@@ -176,418 +176,10 @@
       font-size: 14px;
   }
 
-  /* --- DETAIL PAGE STYLES --- */
-.detail-content-wrapper {
-    padding: 20px;
-    padding-bottom: 90px; 
-}
+  /* --- DETAIL PAGE STYLES */ 
+  .detail-content-wrapper {
+      padding: 20px;
+      padding-bottom: 90px; 
+   }
 
-/* Header & Top Section */
-.detail-top-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-.detail-main-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 10px;
-    object-fit: cover;
-    background: #ccc;
-    flex-shrink: 0;
-}
-.detail-header-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-.detail-room-name-badge {
-    /* CHANGED: Light background variable now points to light blue */
-    background: var(--light-mint-bg);
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-.btn-location-detail {
-    background: #e0e0e0;
-    border: none;
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    text-align: center;
-    font-size: 13px;
-}
-
-/* Section Labels */
-.detail-section-label {
-    display: inline-block;
-    background: #546e7a; 
-    color: white;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    margin-top: 15px;
-}
-
-/* Gray Content Boxes */
-.detail-info-box {
-    background: #eef6f7;
-    border-radius: 8px;
-    padding: 15px;
-    font-size: 13px;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-/* Facilities & Environment Grid */
-.fac-env-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-.fac-column, .env-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.fac-header, .env-header {
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-/* Tags */
-.fac-tag {
-    /* CHANGED: Tag background to primary blue */
-    background: var(--primary);
-    color: white;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Bubbles (Slate) */
-.env-bubble {
-    background: #546e7a; 
-    color: white;
-    padding: 8px 10px;
-    border-radius: 20px;
-    font-size: 10px;
-    text-align: center;
-    line-height: 1.3;
-}
-
-/* Rules List */
-.rules-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 11px;
-    color: #333;
-    line-height: 1.8;
-}
-
-/* Bottom Action Buttons */
-.detail-action-area {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.btn-action-cancel {
-    background: #546e7a;
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-}
-.btn-action-row {
-    display: flex;
-    gap: 10px;
-}
-.btn-action-sub {
-    flex: 1;
-    background: #e0e0e0;
-    color: #333;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-/* --- STAR STYLES --- */
-.search-card {
-    position: relative; 
-}
-
-.star-icon-btn {
-    position: absolute;
-    top: 12px;
-    right: 10px;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 10; 
-    color: #ccc; 
-    transition: color 0.2s;
-}
-/* --- CUSTOM ICON STYLES --- */
-
-.icon-img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    display: block;
-}
-
-.menu-icon-img {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
-
-.nav-icon-img {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 4px;
-    object-fit: contain;
-    filter: grayscale(100%); 
-    opacity: 0.5;
-    transition: 0.2s;
-}
-
-.nav-item.active .nav-icon-img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-.star-img-btn {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 10;
-    object-fit: contain;
-}
-
-.back-icon-img {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-.star-icon-btn.active {
-    color: #ffca28; 
-}
-  .btn-filter-reset { background: #e0e0e0; color: #333; }
-  /* CHANGED: Apply button to primary blue */
-  .btn-filter-apply { background: var(--primary); color: white; }
-  
-  /* --- OTHER COMPONENTS --- */
-  .horizontal-section { background: #eef6f7; padding: 20px; position: relative; }
-  .section-header-row { display: flex; justify-content: flex-end; margin-bottom: 5px; }
-  .see-more { font-size: 12px; color: #888; text-decoration: underline; cursor: pointer; }
-  .horizontal-scroll { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 10px; }
-  .horizontal-scroll::-webkit-scrollbar { display: none; }
-  
-  .mini-card { min-width: 160px; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
-  .mini-card-img { height: 100px; width: 100%; object-fit: cover; background: #eee; position: relative; }
-  .mini-card-info { padding: 10px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
-  .mini-card-title { font-size: 13px; font-weight: bold; color: #333; margin-bottom: 10px; line-height: 1.3; }
-  /* CHANGED: Reserve button to primary blue */
-  .btn-mini-reserve { background: var(--primary); color: white; border: none; border-radius: 4px; padding: 8px 0; font-size: 12px; font-weight: bold; width: 100%; cursor: pointer; }
-  .mini-fav-icon { position: absolute; top: 8px; right: 8px; color: orange; font-size: 16px; }
-  
-  /* Calendar & List */
-  .date-section { text-align: center; padding: 20px 0; background: white; }
-  .year-month { font-size: 18px; font-weight: bold; margin-bottom: 15px; }
-  .week-row { display: flex; justify-content: space-between; padding: 0 20px; background: #eef6f7; padding-top: 15px; padding-bottom: 15px; }
-  .day-item { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; }
-  .day-name { font-size: 11px; color: #888; }
-  .day-name.red { color: #e57373; }
-  .day-name.blue { color: #64b5f6; }
-  .day-number { font-size: 14px; font-weight: bold; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
-  /* CHANGED: Selected day border/text to primary blue */
-  .day-item.selected .day-number { background: white; border: 2px solid var(--primary); color: #333; }
-  .day-item.selected .day-name { font-weight: bold; }
-  
-  .list-card { background: #eef6f7; border-radius: 10px; padding: 10px; display: flex; gap: 12px; margin-bottom: 15px; }
-  .list-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; background: #ddd; }
-  .list-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-  .list-title { font-size: 13px; font-weight: bold; margin-bottom: 4px; color: #333; }
-  .list-time { font-size: 12px; font-weight: bold; margin-bottom: 6px; color: #333; }
-  .list-details { font-size: 11px; color: #555; line-height: 1.5; }
-  .text-red { color: red; }
-  
-  /* Search Results */
-  .search-section-title { padding: 15px 20px 5px 20px; font-size: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-  .sort-badge { background: #90a4ae; color: white; font-size: 10px; padding: 3px 8px; border-radius: 12px; cursor: pointer; }
-  .search-card { margin: 10px 20px; padding: 15px; border-radius: 12px; display: flex; flex-direction: column; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-  .search-card.blue { background-color: var(--light-blue-bg); }
-  /* CHANGED: Green card background to light blue/mint variable */
-  .search-card.green { background-color: var(--light-mint-bg); }
-  .sc-top { display: flex; gap: 12px; margin-bottom: 12px; }
-  .sc-img { width: 90px; height: 90px; border-radius: 8px; background: #ccc; object-fit: cover; }
-  .sc-info { flex: 1; display: flex; flex-direction: column; justify-content: center; font-size: 12px; gap: 4px; color: #444; }
-  .sc-title { font-weight: bold; font-size: 14px; margin-bottom: 2px; color: #222; }
-  .sc-btns { display: flex; gap: 10px; }
-  .btn-slate { flex: 1; background: var(--slate-btn); color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; font-size: 12px; cursor: pointer; }
-  /* CHANGED: Mint button to primary blue */
-  .btn-mint { flex: 1; background: var(--primary); color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; font-size: 12px; cursor: pointer; }
-  .btn-more-wide { width: 90%; margin: 10px auto 20px auto; display: block; background: #e0e0e0; color: #555; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; }
-  
-  /* Favorites / History Headers */
-  .fav-header-simple, .history-header {
-    margin-top: 30px; padding: 15px 20px; font-size: 18px; font-weight: bold; text-align: center; position: relative; background: white;
-  }
-  .fav-header-simple .back-icon, .history-header .back-icon { position: absolute; left: 20px; cursor: pointer; font-size: 20px; }
-  .fav-section-label, .recent-section-label { padding: 20px 20px 10px 20px; font-size: 16px; font-weight: bold; color: #333; }
-  .recent-section-label { border-bottom: 1px solid #ddd; margin: 0 20px; padding-left: 0; }
-  .star-icon { position: absolute; right: 20px; top: 20px; font-size: 20px; }
-  .star-orange { color: #ff9800; }
-  .star-gray { color: #ccc; }
-  
-  /* History Tabs */
-  .history-tabs { display: flex; background: white; padding: 0 20px; border-bottom: 1px solid #f0f0f0; }
-  .history-tab-item { padding: 15px 0; margin-right: 25px; font-size: 16px; color: #999; cursor: pointer; }
-  .history-tab-item.active { color: #333; font-weight: bold; }
-  
-  /* Nav Bar */
-  .nav-bar { height: 70px; background: #fcfcfc; display: flex; justify-content: space-around; align-items: flex-start; padding-top: 10px; position: absolute; bottom: 0; width: 100%; z-index: 100; border-top: 1px solid #eee; }
-  .nav-item { display: flex; flex-direction: column; align-items: center; font-size: 10px; color: #999; cursor: pointer; width: 25%; }
-  .nav-item.active { color: #455a64; font-weight: bold; }
-  .nav-icon { font-size: 24px; margin-bottom: 4px; }
-  
-  /* Splash */
-  .splash-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #2c5bb8; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 200; }
-  /* CHANGED: Logo text to primary blue */
-  .logo-text { color: var(--primary); font-size: 24px; font-weight: bold; margin-top: 20px;}
-  /* Add this to the very bottom of your style.css */
-
-/* --- MOBILE FULL SCREEN FIX --- */
-/* --- MOBILE FULL SCREEN & NOTCH FIX --- */
-@media only screen and (max-width: 600px) {
-
-    body {
-        /* This ensures the background behind the notch is white */
-        background-color: white; 
-        /* Prevents the whole page from bouncing */
-        overscroll-behavior-y: none; 
-    }
-
-    .app-container {
-        width: 100% !important;
-        height: 100dvh !important; /* 'dvh' handles the mobile address bar better than 'vh' */
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        
-        /* Reset margins/padding */
-        margin: 0 !important;
-        padding-top: env(safe-area-inset-top); /* Push content down below notch */
-        padding-bottom: 0; /* Remove bottom padding here, we handle it in content */
-        
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* FIX: Make the Navbar STICKY forever */
-    .nav-bar {
-        position: fixed; /* Stick to the glass */
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background: #fcfcfc;
-        border-top: 1px solid #eee;
-        
-        /* Add padding for the iPhone Home Swipe Bar */
-        padding-bottom: calc(10px + env(safe-area-inset-bottom));
-        height: auto; /* Let it grow to fit the padding */
-    }
-    
-    /* Adjust content so it doesn't get hidden behind the sticky navbar */
-    .content {
-        /* Add extra padding at bottom = Navbar height + extra space */
-        padding-bottom: 100px !important; 
-    }
-}
-/* --- CONFIRMATION MODAL STYLES --- */
-.modal-overlay {
-    position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
-    z-index: 2000; /* Sit on top of everything */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-box {
-    background: white;
-    width: 320px;
-    padding: 30px 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.modal-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 5px; }
-.modal-sub { font-size: 14px; color: #888; margin-bottom: 10px; }
-.modal-info { font-size: 15px; color: #333; font-weight: 500; margin-bottom: 20px; }
-
-.modal-btn-row { display: flex; gap: 10px; }
-
-.btn-modal-cancel {
-    flex: 1;
-    background-color: #546e7a; /* Slate Blue from your palette */
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn-modal-confirm {
-    flex: 1;
-    background-color: #227CD6; /* Green from your palette */
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-}
+New Details:
