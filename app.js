@@ -151,7 +151,10 @@ const HomeListCard = ({ room, onClick }) => {
 // ==========================================
 // 4. COMPONENT: DETAIL VIEW
 // ==========================================
-const DetailView = ({ room, onBack, onReserve, isFromHistory = false }) => {
+// ==========================================
+// 3. COMPONENT: DETAIL VIEW (Updated)
+// ==========================================
+const DetailView = ({ room, onBack, onReserve, isFromHistory = false, activeTab }) => {
     return (
         <>
             <div className="fav-header-simple">
@@ -168,11 +171,16 @@ const DetailView = ({ room, onBack, onReserve, isFromHistory = false }) => {
                     </div>
                 </div>
 
-                <div className="detail-section-label">예약 정보</div>
-                <div className="detail-info-box">
-                    <div>🕒 25년 10월 20일 12:00 ~14:00</div>
-                    <div className="detail-user-count">👤 사용 인원: 4명</div>
-                </div>
+                {/* --- LOGIC CHANGE: Hide Reservation Info if in Favorites --- */}
+                {activeTab !== 'fav' && (
+                    <>
+                        <div className="detail-section-label">예약 정보</div>
+                        <div className="detail-info-box">
+                            <div>🕒 25년 10월 20일 12:00 ~14:00</div>
+                            <div className="detail-user-count">👤 사용 인원: 4명</div>
+                        </div>
+                    </>
+                )}
 
                 <div className="detail-section-label">공간 설비/환경</div>
                 <div className="detail-info-box">
@@ -222,51 +230,6 @@ const DetailView = ({ room, onBack, onReserve, isFromHistory = false }) => {
         </>
     );
 };
-
-// ==========================================
-// 5. COMPONENT: SUCCESS / CANCEL SCREENS
-// ==========================================
-const ReservationSuccess = ({ room, onConfirm }) => (
-    <div className="app-container">
-        <div className="fav-header-simple">
-            <img src={ICONS.header.back} className="back-icon-img" onClick={onConfirm} />
-            예약 완료
-        </div>
-        <div className="content detail-content-wrapper detail-content-center">
-            <img src={ICONS.actions.check} className="check-icon" />
-            <h2 className="success-title">예약이 완료되었습니다.</h2>
-            <div className="detail-info-box detail-info-box-full">
-                <h3 className="detail-info-title">{room.title}</h3>
-                <div>🕒 25년 10월 20일 12:00 ~14:00</div>
-                <div>👤 사용 인원: 4명</div>
-            </div>
-            <div className="detail-action-area detail-action-area-full">
-                <button className="btn-action-cancel btn-action-confirm" onClick={onConfirm}>확인</button>
-            </div>
-        </div>
-    </div>
-);
-
-const ReservationCanceled = ({ room, onConfirm }) => (
-    <div className="app-container">
-        <div className="fav-header-simple">
-            <img src={ICONS.header.back} className="back-icon-img" onClick={onConfirm} />
-            예약 취소
-        </div>
-        <div className="content detail-content-wrapper detail-content-center">
-            <img src={ICONS.actions.check} className="check-icon" />
-            <h2 className="success-title">예약이 취소되었습니다.</h2>
-            <div className="detail-info-box detail-info-box-full">
-                <h3 className="detail-info-title">{room.title}</h3>
-                <div>🕒 25년 10월 20일 12:00 ~14:00</div>
-                <div>👤 사용 인원: 4명</div>
-            </div>
-            <div className="detail-action-area detail-action-area-full">
-                <button className="btn-action-cancel btn-action-confirm" onClick={onConfirm}>확인</button>
-            </div>
-        </div>
-    </div>
-);
 
 // ==========================================
 // 6. COMPONENT: HEADER & FILTER
@@ -443,6 +406,8 @@ const App = () => {
                     onBack={() => setViewMode('list')} 
                     onReserve={activeTab === 'history' ? () => handleCancelReservation() : () => clickReserveButton(selectedRoom)} 
                     isFromHistory={activeTab === 'history'}
+                    // ADD THIS LINE BELOW:
+                    activeTab={activeTab} 
                 />
                 {showConfirmModal && <ConfirmationModal />}
                 <NavBar />
