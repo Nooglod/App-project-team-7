@@ -232,6 +232,53 @@ const DetailView = ({ room, onBack, onReserve, isFromHistory = false, activeTab 
 };
 
 // ==========================================
+// ==========================================
+// 5. COMPONENT: SUCCESS & CANCEL SCREENS
+// ==========================================
+const ReservationSuccess = ({ room, onConfirm }) => {
+    return (
+        <div className="app-container">
+            <div className="success-screen">
+                <div className="success-icon-wrapper">
+                    <img src={ICONS.actions.check} className="success-icon" alt="Success" />
+                </div>
+                <div className="success-title">예약이 확정되었습니다!</div>
+                <div className="success-room-card">
+                    <img src={room.image} className="success-room-img" alt={room.title} />
+                    <div className="success-room-info">
+                        <div className="success-room-title">{room.title}</div>
+                        <div className="success-room-time">2025.10.21 12:00 ~ 14:00</div>
+                    </div>
+                </div>
+                <div className="success-message">
+                    예약 내역은 [예약 내역] 탭에서<br />확인 가능합니다.
+                </div>
+                <button className="btn-success-home" onClick={onConfirm}>홈으로 돌아가기</button>
+            </div>
+        </div>
+    );
+};
+
+const ReservationCanceled = ({ room, onConfirm }) => {
+    return (
+        <div className="app-container">
+            <div className="success-screen">
+                <div className="success-icon-wrapper red-bg">
+                    <img src={ICONS.actions.check} className="success-icon" alt="Canceled" />
+                </div>
+                <div className="success-title">예약이 취소되었습니다.</div>
+                <div className="success-room-card">
+                    <img src={room.image} className="success-room-img" alt={room.title} />
+                    <div className="success-room-info">
+                        <div className="success-room-title">{room.title}</div>
+                        <div className="success-room-time">취소 완료</div>
+                    </div>
+                </div>
+                <button className="btn-success-home" onClick={onConfirm}>예약 내역 확인하기</button>
+            </div>
+        </div>
+    );
+};
 // 6. COMPONENT: HEADER & FILTER
 // ==========================================
 const CommonHeader = ({ searchQuery, setSearchQuery, setActiveTab, setViewMode, showFilter, setShowFilter, activeTab }) => (
@@ -398,6 +445,7 @@ const App = () => {
     if (viewMode === 'success' && selectedRoom) return <ReservationSuccess room={selectedRoom} onConfirm={() => switchTab('home')} />;
     if (viewMode === 'canceled' && selectedRoom) return <ReservationCanceled room={selectedRoom} onConfirm={() => switchTab('history')} />;
     
+
     if (viewMode === 'detail' && selectedRoom) {
         return (
             <div className="app-container">
@@ -406,8 +454,7 @@ const App = () => {
                     onBack={() => setViewMode('list')} 
                     onReserve={activeTab === 'history' ? () => handleCancelReservation() : () => clickReserveButton(selectedRoom)} 
                     isFromHistory={activeTab === 'history'}
-                    // ADD THIS LINE BELOW:
-                    activeTab={activeTab} 
+                    activeTab={activeTab}  // <--- ADD THIS LINE
                 />
                 {showConfirmModal && <ConfirmationModal />}
                 <NavBar />
