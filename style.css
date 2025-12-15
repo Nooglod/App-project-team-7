@@ -44,13 +44,14 @@
   }
   
   /* 헤더 */
-  .header-wrapper {
+.header-wrapper {
     background: white;
     padding: 10px 20px;
     z-index: 20; 
     border-bottom: 1px solid #f0f0f0;
     position: relative;
-  }
+    flex-shrink: 0; /* <--- THIS IS MISSING in your code. Add it! */
+}
   .top-row {
     display: flex;
     justify-content: space-between;
@@ -704,6 +705,7 @@
     display: flex;
     gap: 15px;
     position: relative;
+    align-items: flex-start; /* <--- THIS IS MISSING in your code. Add it! */
 }
 
 .home-room-img {
