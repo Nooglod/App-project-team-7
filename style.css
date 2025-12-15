@@ -695,7 +695,6 @@
     padding: 15px;
 }
 
-/* REPLACE THIS BLOCK */
 .home-room-card {
     background: white;
     border: 1px solid #e0e0e0;
@@ -705,7 +704,6 @@
     display: flex;
     gap: 15px;
     position: relative;
-    align-items: flex-start; /* <--- THIS IS THE NEW LINE */
 }
 
 .home-room-img {
@@ -715,6 +713,7 @@
     object-fit: cover;
     flex-shrink: 0;
 }
+
 .home-room-content {
     flex: 1;
     display: flex;
